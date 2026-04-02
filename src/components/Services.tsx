@@ -25,16 +25,20 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-20 px-4 md:px-6 bg-dark">
-      
+    <motion.section
+      id="services"
+      className="py-20 px-4 md:px-6 bg-dark"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       {/* Heading */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-bold">
           Our <span className="text-primary">Services</span>
         </h2>
-        <p className="text-gray-400 mt-4">
-          What we offer to our clients
-        </p>
+        <p className="text-gray-400 mt-4">What we offer to our clients</p>
       </div>
 
       {/* Grid */}
@@ -46,16 +50,12 @@ const Services = () => {
             className="bg-black border border-gray-800 rounded-xl p-6 text-center hover:border-primary transition"
           >
             <div className="text-4xl mb-4">{item.icon}</div>
-            <h3 className="text-lg font-semibold mb-2">
-              {item.title}
-            </h3>
-            <p className="text-gray-400 text-sm">
-              {item.desc}
-            </p>
+            <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+            <p className="text-gray-400 text-sm">{item.desc}</p>
           </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

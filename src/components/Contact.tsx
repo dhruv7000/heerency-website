@@ -3,6 +3,12 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { motion } from "framer-motion";
 import { db } from "../services/firebase";
 
+const projectSteps = [
+  "Share your space, goals, and inspiration",
+  "Receive a tailored concept direction",
+  "Move into planning and execution with clarity",
+];
+
 const Contact = () => {
   const [form, setForm] = useState({
     name: "",
@@ -47,6 +53,9 @@ const Contact = () => {
     >
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div className="text-center lg:text-left">
+          <p className="text-sm uppercase tracking-[0.28em] text-primary">
+            Start Your Project
+          </p>
           <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
             Contact <span className="text-primary">Us</span>
           </h2>
@@ -71,12 +80,38 @@ const Contact = () => {
               </p>
             </div>
           </div>
+
+          <div className="mt-8 rounded-3xl border border-white/10 bg-gradient-to-br from-white/8 to-white/0 p-6">
+            <p className="text-sm uppercase tracking-[0.24em] text-primary">
+              What Happens Next
+            </p>
+            <div className="mt-4 space-y-4">
+              {projectSteps.map((step, index) => (
+                <div key={step} className="flex items-start gap-4">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-black">
+                    {index + 1}
+                  </span>
+                  <p className="pt-1 text-sm leading-6 text-gray-300 sm:text-base">
+                    {step}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="space-y-4 rounded-3xl border border-white/10 bg-black/60 p-5 text-left shadow-xl sm:p-6 md:p-8"
+          className="space-y-4 rounded-3xl border border-white/10 bg-black/60 p-5 text-left shadow-[0_30px_100px_rgba(0,0,0,0.35)] sm:p-6 md:p-8"
         >
+          <div className="pb-2">
+            <h3 className="text-xl font-semibold text-white">Book a Design Consultation</h3>
+            <p className="mt-2 text-sm leading-6 text-gray-400">
+              Share a few details and we will reach out with the right next step
+              for your project.
+            </p>
+          </div>
+
           <input
             type="text"
             placeholder="Your Name"

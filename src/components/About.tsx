@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 
+const designPrinciples = [
+  "Luxury aesthetics balanced with everyday comfort",
+  "Layouts planned around lifestyle and movement",
+  "Material palettes curated for warmth and longevity",
+];
+
 const About = () => {
   return (
     <section
@@ -31,6 +37,9 @@ const About = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
+          <p className="text-sm uppercase tracking-[0.28em] text-primary">
+            Why Clients Choose Us
+          </p>
           <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
             About <span className="text-primary">Heerency</span>
           </h2>
@@ -46,6 +55,20 @@ const About = () => {
             From residential homes to commercial spaces, we bring creativity,
             precision, and passion into every project we deliver.
           </p>
+
+          <div className="mt-8 space-y-3">
+            {designPrinciples.map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4"
+              >
+                <span className="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+                <p className="text-sm leading-6 text-gray-300 sm:text-base">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
 
           <div className="mt-8 grid grid-cols-1 gap-4 text-center sm:grid-cols-3 sm:gap-6">
             <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-5">

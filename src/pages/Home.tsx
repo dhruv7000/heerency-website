@@ -6,18 +6,20 @@ import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import About from "../components/About";
 
 const Home = () => {
   return (
     <>
       <Navbar />
       <Hero />
-      <Portfolio />
-      <WhatsAppButton />
+      <About />
       <Services />
+      <Portfolio />
       <Testimonials />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </>
   );
 };

@@ -1,52 +1,50 @@
 const Footer = () => {
   return (
-    <footer className="bg-black border-t border-gray-800 py-10 px-4 md:px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
-        {/* Brand */}
+    <footer className="border-t border-gray-800 bg-black px-4 py-10 sm:px-6 md:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8 text-center sm:text-left md:grid-cols-3">
         <div>
           <h2 className="text-2xl font-bold text-primary">Heerency Creation</h2>
-          <p className="text-gray-400 mt-3 text-sm">
+          <p className="mt-3 text-sm leading-6 text-gray-400">
             Premium interior design solutions for modern living.
           </p>
         </div>
 
-        {/* Links */}
         <div>
-          <h3 className="font-semibold mb-3">Quick Links</h3>
-          <ul className="space-y-2 text-gray-400 text-sm">
+          <h3 className="mb-3 font-semibold">Quick Links</h3>
+          <ul className="space-y-2 text-sm text-gray-400">
             <li>
-              <a href="#home" className="hover:text-primary transition">
+              <a href="#home" className="transition hover:text-primary">
                 Home
               </a>
             </li>
             <li>
-              <a href="#services" className="hover:text-primary transition">
+              <a href="#services" className="transition hover:text-primary">
                 Services
               </a>
             </li>
             <li>
-              <a href="#projects" className="hover:text-primary transition">
+              <a href="#projects" className="transition hover:text-primary">
                 Projects
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-primary transition">
+              <a href="#contact" className="transition hover:text-primary">
                 Contact
               </a>
             </li>
           </ul>
         </div>
 
-        {/* Contact */}
         <div>
-          <h3 className="font-semibold mb-3">Contact</h3>
-          <p className="text-gray-400 text-sm">📧 info@heerency.com</p>
-          <p className="text-gray-400 text-sm mt-2">📞 +91 99999 99999</p>
+          <h3 className="mb-3 font-semibold">Contact</h3>
+          <p className="text-sm text-gray-400">Email: info@heerency.com</p>
+          <p className="mt-2 text-sm text-gray-400">Phone: +91 99999 99999</p>
         </div>
       </div>
 
-      <div className="text-center text-gray-500 text-sm mt-8">
-        © {new Date().getFullYear()} Heerency Creation. All rights reserved.
+      <div className="mt-8 text-center text-sm text-gray-500">
+        Copyright {new Date().getFullYear()} Heerency Creation. All rights
+        reserved.
       </div>
     </footer>
   );

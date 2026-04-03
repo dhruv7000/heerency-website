@@ -32,24 +32,22 @@ const Portfolio = () => {
   return (
     <motion.section
       id="projects"
-      className="py-24 px-4 md:px-6 bg-black"
+      className="bg-black px-4 py-20 sm:px-6 md:px-8 md:py-24"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      {/* Heading */}
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold">
+      <div className="mb-12 text-center md:mb-16">
+        <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
           Our <span className="text-primary">Projects</span>
         </h2>
-        <p className="text-gray-400 mt-4">
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-gray-400 sm:text-base">
           A glimpse of our premium interior designs
         </p>
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((item, index) => (
           <motion.div
             key={index}
@@ -58,18 +56,16 @@ const Portfolio = () => {
             transition={{ delay: index * 0.2 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.03 }}
-            className="relative overflow-hidden rounded-2xl group cursor-pointer shadow-lg"
+            className="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg"
           >
-            {/* Image */}
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-[350px] object-cover transition-transform duration-500 group-hover:scale-110"
+              className="h-[280px] w-full object-cover transition-transform duration-500 group-hover:scale-110 sm:h-[320px] lg:h-[350px]"
             />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-              <h3 className="text-lg md:text-xl font-semibold text-white">
+            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/85 via-black/20 to-transparent p-5 sm:p-6">
+              <h3 className="text-lg font-semibold text-white sm:text-xl">
                 {item.title}
               </h3>
             </div>

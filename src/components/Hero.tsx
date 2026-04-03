@@ -4,27 +4,26 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center text-center px-4 md:px-6 pt-24"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pb-16 pt-28 text-center sm:px-6 md:px-8 md:pb-20 md:pt-32"
     >
-      {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6"
           alt="Luxury Interior Design"
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-black/70" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 mx-auto w-full max-w-4xl">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
+          className="text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl"
         >
-          Designing Spaces That <br />
+          Designing Spaces That
+          <br className="hidden sm:block" />
           Define <span className="text-primary">Luxury</span>
         </motion.h1>
 
@@ -32,7 +31,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="mt-4 md:mt-6 text-sm sm:text-base md:text-lg text-gray-300 max-w-xl mx-auto"
+          className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-gray-300 sm:text-base md:mt-6 md:text-lg"
         >
           Transform your home or office into a masterpiece with our premium
           interior solutions.
@@ -42,20 +41,18 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="mt-6 md:mt-8 flex flex-col sm:flex-row justify-center gap-4"
+          className="mt-8 flex flex-col justify-center gap-3 sm:flex-row md:mt-10"
         >
-          {/* Scroll to Projects */}
           <a
             href="#projects"
-            className="bg-primary px-6 py-3 rounded-full text-black font-semibold hover:opacity-90 transition"
+            className="rounded-full bg-primary px-6 py-3 text-center font-semibold text-black transition hover:opacity-90"
           >
             View Projects
           </a>
 
-          {/* Scroll to Contact */}
           <a
             href="#contact"
-            className="border border-gray-400 px-6 py-3 rounded-full hover:border-primary transition"
+            className="rounded-full border border-gray-400 px-6 py-3 text-center transition hover:border-primary"
           >
             Contact Us
           </a>

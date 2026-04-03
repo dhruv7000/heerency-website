@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-dark text-white;
-}
-
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
+body {
+  @apply bg-dark text-white;
+  overflow-x: hidden;
+}

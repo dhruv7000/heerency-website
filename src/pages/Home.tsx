@@ -1,25 +1,27 @@
-import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Portfolio from "../components/Portfolio";
-import WhatsAppButton from "../components/WhatsAppButton";
-import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
-import About from "../components/About";
+import CTASection from "../components/CTASection";
+import HomePageLinks from "../components/HomePageLinks";
+import HomeProcessSnapshot from "../components/HomeProcessSnapshot";
+import StudioHighlights from "../components/StudioHighlights";
 
 const Home = () => {
   return (
     <>
-      <Navbar />
       <Hero />
-      <About />
-      <Services />
-      <Portfolio />
+      <StudioHighlights />
+      <HomeProcessSnapshot />
+      <HomePageLinks />
       <Testimonials />
-      <Contact />
-      <Footer />
-      <WhatsAppButton />
+      <CTASection
+        eyebrow="Plan Your Space"
+        title="Bring your next interior project into a more premium, structured flow"
+        description="Whether you are shaping a residence, workplace, or renovation, we help turn ideas into high-end spaces with clarity and confidence."
+        primaryLabel="Start a Consultation"
+        primaryTo="/contact"
+        secondaryLabel="Explore Services"
+        secondaryTo="/services"
+      />
     </>
   );
 };

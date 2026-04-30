@@ -19,7 +19,7 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="bg-black px-4 py-20 sm:px-6 md:px-8 md:py-24"
+      className="bg-[var(--color-bg)] px-4 py-20 text-[var(--color-text)] sm:px-6 md:px-8 md:py-24"
     >
       <div className="mb-12 text-center md:mb-16">
         <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
@@ -35,9 +35,9 @@ const Testimonials = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-lg"
+            className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 shadow-lg"
           >
-            <p className="text-base italic leading-7 text-gray-300">
+            <p className="text-base italic leading-7 text-[var(--color-text-soft)]">
               "{item.text}"
             </p>
 

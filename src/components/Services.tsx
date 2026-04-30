@@ -31,7 +31,7 @@ const Services = () => {
   return (
     <motion.section
       id="services"
-      className="bg-dark px-4 py-20 sm:px-6 md:px-8 md:py-24"
+      className="bg-[var(--color-bg)] px-4 py-20 text-[var(--color-text)] sm:px-6 md:px-8 md:py-24"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -44,7 +44,7 @@ const Services = () => {
         <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
           Our <span className="text-primary">Services</span>
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-sm text-gray-400 sm:text-base">
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-[var(--color-text-muted)] sm:text-base">
           Tailored services designed to move a project from inspiration to
           polished execution.
         </p>
@@ -55,19 +55,19 @@ const Services = () => {
           <motion.div
             key={index}
             whileHover={{ y: -10 }}
-            className="rounded-[28px] border border-gray-800 bg-gradient-to-b from-[#171717] to-black p-6 text-left transition hover:border-primary hover:shadow-[0_20px_70px_rgba(249,115,22,0.12)] sm:p-7"
+            className="rounded-[28px] border border-[var(--color-border)] bg-[var(--color-card)] p-6 text-left transition hover:border-primary hover:shadow-[0_20px_70px_rgba(249,115,22,0.12)] sm:p-7"
           >
             <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-primary/15 text-sm font-bold uppercase tracking-[0.24em] text-primary">
               {item.icon}
             </div>
             <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
-            <p className="text-sm leading-6 text-gray-400">{item.desc}</p>
+            <p className="text-sm leading-6 text-[var(--color-text-muted)]">{item.desc}</p>
 
             <div className="mt-6 space-y-3">
               {item.points.map((point) => (
                 <div key={point} className="flex items-center gap-3">
                   <span className="h-2 w-2 rounded-full bg-primary"></span>
-                  <p className="text-sm text-gray-300">{point}</p>
+                  <p className="text-sm text-[var(--color-text-soft)]">{point}</p>
                 </div>
               ))}
             </div>

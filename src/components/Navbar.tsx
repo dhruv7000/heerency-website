@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
+import ThemeToggle from "./ThemeToggle";
 
-const navItems = ["home", "about", "services", "projects", "contact"];
+const navItems = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Services", to: "/services" },
+  { label: "Projects", to: "/projects" },
+  { label: "Contact", to: "/contact" },
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -33,82 +41,96 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "border-b border-gray-800 bg-black/80 shadow-lg backdrop-blur-lg"
+          ? "border-b border-[var(--color-border)] bg-[var(--color-surface-strong)] shadow-lg backdrop-blur-lg"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 md:px-6 md:py-3">
-        <a href="#home" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img
             src={logo}
             alt="Heerency"
             className="h-12 transition-transform duration-300 hover:scale-105 md:h-14"
           />
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-10 text-sm font-medium md:flex">
           {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item}`}
-              className="group relative capitalize"
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `group relative text-[var(--color-text)] transition hover:text-primary ${
+                  isActive ? "text-primary" : ""
+                }`
+              }
             >
-              {item}
+              {item.label}
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </NavLink>
           ))}
         </div>
 
-        <a
-          href="#contact"
-          className="hidden rounded-full bg-primary px-6 py-2 font-semibold text-black shadow-md transition hover:scale-105 md:inline-block"
-        >
-          Get Quote
-        </a>
+        <div className="hidden items-center gap-3 md:flex">
+          <ThemeToggle />
+          <Link
+            to="/contact"
+            className="rounded-full bg-primary px-6 py-2 font-semibold text-black shadow-md transition hover:scale-105"
+          >
+            Get Quote
+          </Link>
+        </div>
 
-        <button
-          type="button"
-          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((prev) => !prev)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:bg-white/10 md:hidden"
-        >
-          {open ? (
-            <span className="text-2xl leading-none">&times;</span>
-          ) : (
-            <span className="flex flex-col items-center justify-center gap-1">
-              <span className="h-1.5 w-1.5 rounded-full bg-current"></span>
-              <span className="h-1.5 w-1.5 rounded-full bg-current"></span>
-              <span className="h-1.5 w-1.5 rounded-full bg-current"></span>
-            </span>
-          )}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle compact />
+          <button
+            type="button"
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((prev) => !prev)}
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] transition hover:border-primary"
+          >
+            {open ? (
+              <span className="text-2xl leading-none">&times;</span>
+            ) : (
+              <span className="flex flex-col items-center justify-center gap-1">
+                <span className="h-1.5 w-1.5 rounded-full bg-current"></span>
+                <span className="h-1.5 w-1.5 rounded-full bg-current"></span>
+                <span className="h-1.5 w-1.5 rounded-full bg-current"></span>
+              </span>
+            )}
+          </button>
+        </div>
       </div>
 
       <div
-        className={`fixed left-0 top-[68px] w-full overflow-hidden bg-black/95 px-6 backdrop-blur-lg transition-all duration-300 md:hidden ${
+        className={`fixed left-0 top-[68px] w-full overflow-hidden border-b border-[var(--color-border)] bg-[var(--color-surface-strong)] px-6 backdrop-blur-lg transition-all duration-300 md:hidden ${
           open ? "max-h-96 py-6" : "max-h-0"
         }`}
       >
         <div className="flex flex-col items-center gap-6 text-lg">
           {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item}`}
+            <NavLink
+              key={item.to}
+              to={item.to}
               onClick={handleClick}
-              className="capitalize text-lg font-medium transition hover:text-primary"
+              className={({ isActive }) =>
+                `text-lg font-medium text-[var(--color-text)] transition hover:text-primary ${
+                  isActive ? "text-primary" : ""
+                }`
+              }
             >
-              {item}
-            </a>
+              {item.label}
+            </NavLink>
           ))}
 
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             onClick={handleClick}
             className="w-full rounded-full bg-primary py-3 text-center font-semibold text-black"
           >
             Get Quote
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

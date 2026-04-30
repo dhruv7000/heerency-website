@@ -10,7 +10,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-gradient-to-b from-black to-gray-900 px-4 py-20 sm:px-6 md:px-8 md:py-24"
+      className="bg-[linear-gradient(180deg,var(--color-bg)_0%,var(--color-bg-soft)_100%)] px-4 py-20 text-[var(--color-text)] sm:px-6 md:px-8 md:py-24"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
         <motion.div
@@ -44,14 +44,14 @@ const About = () => {
             About <span className="text-primary">Heerency</span>
           </h2>
 
-          <p className="mt-6 text-base leading-7 text-gray-400 sm:text-lg">
+          <p className="mt-6 text-base leading-7 text-[var(--color-text-muted)] sm:text-lg">
             At Heerency Creation, we specialize in crafting elegant and modern
             interior spaces that reflect your personality and lifestyle. Our
             designs combine aesthetics with functionality to create spaces that
             truly inspire.
           </p>
 
-          <p className="mt-4 text-base leading-7 text-gray-400 sm:text-lg">
+          <p className="mt-4 text-base leading-7 text-[var(--color-text-muted)] sm:text-lg">
             From residential homes to commercial spaces, we bring creativity,
             precision, and passion into every project we deliver.
           </p>
@@ -60,10 +60,10 @@ const About = () => {
             {designPrinciples.map((item) => (
               <div
                 key={item}
-                className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4"
+                className="flex items-start gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-4"
               >
                 <span className="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-                <p className="text-sm leading-6 text-gray-300 sm:text-base">
+                <p className="text-sm leading-6 text-[var(--color-text-soft)] sm:text-base">
                   {item}
                 </p>
               </div>
@@ -71,19 +71,19 @@ const About = () => {
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-4 text-center sm:grid-cols-3 sm:gap-6">
-            <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-5">
+            <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-5">
               <h3 className="text-2xl font-bold text-primary sm:text-3xl">100+</h3>
-              <p className="mt-1 text-sm text-gray-400">Projects</p>
+              <p className="mt-1 text-sm text-[var(--color-text-muted)]">Projects</p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-5">
+            <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-5">
               <h3 className="text-2xl font-bold text-primary sm:text-3xl">50+</h3>
-              <p className="mt-1 text-sm text-gray-400">Clients</p>
+              <p className="mt-1 text-sm text-[var(--color-text-muted)]">Clients</p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-5">
+            <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-5">
               <h3 className="text-2xl font-bold text-primary sm:text-3xl">5+</h3>
-              <p className="mt-1 text-sm text-gray-400">Years</p>
+              <p className="mt-1 text-sm text-[var(--color-text-muted)]">Years</p>
             </div>
           </div>
         </motion.div>

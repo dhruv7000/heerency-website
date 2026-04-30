@@ -38,7 +38,7 @@ const Portfolio = () => {
   return (
     <motion.section
       id="projects"
-      className="bg-black px-4 py-20 sm:px-6 md:px-8 md:py-24"
+      className="bg-[var(--color-bg-soft)] px-4 py-20 text-[var(--color-text)] sm:px-6 md:px-8 md:py-24"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -51,7 +51,7 @@ const Portfolio = () => {
         <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
           Our <span className="text-primary">Projects</span>
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-sm text-gray-400 sm:text-base">
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-[var(--color-text-muted)] sm:text-base">
           A glimpse of the warm, refined, and high-end interiors we craft for
           modern living.
         </p>
